@@ -1,0 +1,15 @@
+import pyautogui
+from PIL import ImageGrab
+import numpy as np
+import math
+x_center = 1920/2 -400
+y_center = 1080/2
+
+radius = 100
+delta = 90
+deg = 0
+
+pyautogui.moveTo(x_center + radius, y_center)
+while deg <=360:
+    pyautogui.dragTo(math.cos(deg*math.pi/180)*radius + x_center, math.sin(deg*math.pi/180)*radius + y_center, button='left', duration=0.0, _pause = False)
+    deg += delta
